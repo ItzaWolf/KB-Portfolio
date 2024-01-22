@@ -1,18 +1,19 @@
 import React from 'react';
 import './navbar.css';
 import sendInfo from "/home/itzawolf/Development/code/Personal Projects/KB-Portfolio/portfolio/src/assets/send.png";
-import { Link } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 
 const Navbar = () => {
   return (
     <nav className='navbar'>
       <div className='desktopMenu'>
-        <Link to="home" className='desktopMenuListItem'>Home</Link>
-        <Link to="about" className='desktopMenuListItem'>About</Link>
-        <Link to="portfolio" className='desktopMenuListItem'>Portfolio</Link>
+        <ScrollLink to="home" className='desktopMenuListItem' smooth={true} duration={500} offset={-50}>Home</ScrollLink>
+        <ScrollLink to="skills" className='desktopMenuListItem' smooth={true} duration={500} offset={-50}>About</ScrollLink>
+        <ScrollLink to="projects" className='desktopMenuListItem' smooth={true} duration={500} offset={-50}>Projects</ScrollLink>
       </div>
-      <button className='desktopMenuBtn'>
-        <img src={sendInfo} alt='' className='desktopMenuImg' />Contact Me</button>
+        <ScrollLink to="contactForm" className='desktopMenuBtn' smooth={true} duration={500} offset={-50}>
+            <img src={sendInfo} alt='' className='desktopMenuImg' />Contact Me
+        </ScrollLink>
     </nav>
   );
 }
